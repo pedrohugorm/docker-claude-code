@@ -1,0 +1,15 @@
+services:
+  claude:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: C:/dd
+        target: /code
+      - "C:/dd/_claude/:/root/.claude"
+      - "C:/dd/_claude/claude.json:/root/claude.json"
+    command: tail -f /dev/null
+    environment:
+      - NODE_ENV=development
