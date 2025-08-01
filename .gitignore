@@ -1,0 +1,15 @@
+# Claude configuration and data
+data/
+
+# Docker
+.dockerignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db 
