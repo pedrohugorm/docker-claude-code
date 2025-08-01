@@ -58,9 +58,11 @@ This will build the image and start an interactive session.
 ### Volume Mounts
 
 The setup mounts the following directories:
-- `C:/your-workspace` → `/code` (your development workspace)
-- `C:/your-workspace/_claude/` → `/root/.claude` (Claude configuration)
-- `C:/your-workspace/_claude/claude.json` → `/root/claude.json` (Claude settings)
+- `../` → `/code` (your development workspace - **customize this path to where you want the container to access**)
+- `./data/` → `/root/.claude` (Claude configuration)
+- `./data/claude.json` → `/root/claude.json` (Claude settings)
+
+**Important**: You must modify the volume mount in `docker-compose.yml` to point to your desired code directory. The current setup mounts the parent directory (`../`) to `/code`. Change the `source` path to match where your code is located.
 
 ### Environment Variables
 

@@ -6,6 +6,7 @@ services:
     working_dir: /code
     volumes:
       - type: bind
+        source: ../
         target: /code
       - "./data/:/root/.claude"
       - "./data/claude.json:/root/claude.json"
